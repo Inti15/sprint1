@@ -52,31 +52,32 @@ function mostrarLista(estudiantes) {//Recibe el resultado que arroja la función
 }
 
 function buscar(nombre, estudiantes) {//Recibe el nombre a buscar y la lista de estudiantes(estudiantes)
-    // TO DO: Buscar el nombre en la lista de estudiantes que se recibe por parámetros
+    // TO CHECK: Buscar el nombre en la lista de estudiantes que se recibe por parámetros
     // Retornar el objeto del estudiante buscado
     // Nota: NO IMPORTA SI EL USUARIO ESCRIBE EL NOMBRE EN MAYÚSCULAS O MINÚSCULAS
 
     var nombreBuscar = nombre.toLowerCase(); //Se convierten a minusculas todas las letras del nombre(a buscar) y se asignan a la variable nombreBuscar
+    //console.log(nombreBuscar);
     var busca = estudiantes.filter(function(elemento){ //Se usa el método filter para encontrar la coincidencia del nombre a buscar se asigna a la variable busca
-      return nombreBuscar == (elemento.nombre).toLowerCase;// Condición de filtro si el nombreBuscar(minusculas) == elemento.nombre(minusculas) se agrega a variable busca
+      return nombreBuscar == (elemento.nombre).toLowerCase();// Condición de filtro si el nombreBuscar(minusculas) == elemento.nombre(minusculas) se agrega a variable busca
     });
-    console.log("Me faltó corregir esta parte")
+    //console.log("Me faltó corregir esta parte")lE FALTABA () a la función toLowerCase a la linea 62
     return busca; //Devuelve el resultado obtenido
 }
 
 function topTecnico(estudiantes) { //Recibe lista de estudiantes
-    // TO DO: Retornar el arreglo de estudiantes ordenado por puntaje técnico de mayor a menor
+    // TO CHECK: Retornar el arreglo de estudiantes ordenado por puntaje técnico de mayor a menor
     // console.log(estudiantes);
-    return estudiantes.sort(function(a,b){// Regresa la lista ordenada mediante el método sort apartir de la siguiente condición
-      return a.ptsTecnicos > b.ptsTecnicos;//Ordena los elementos de la lista de mayor a menor mediante la comparación de cada elemento en el parametro ptsTecnicos
+    var mayorTec = estudiantes.sort(function(a,b){// Regresa la lista ordenada mediante el método sort apartir de la siguiente condición
+      return b.ptsTecnicos - a.ptsTecnicos;//Ordena los elementos de la lista de mayor a menor mediante la comparación de cada elemento en el parametro ptsTecnicos
     });
+    return mayorTec;
 }
 
 function topHSE(estudiantes) {//Recibe lista de estudiantes
-    // TO DO: Retornar el arreglo de estudiantes ordenado por puntaje de HSE de mayor a menor
-      // console.log(estudiantes);
+    // TO CHECK: Retornar el arreglo de estudiantes ordenado por puntaje de HSE de mayor a menor
     var mayorHse = estudiantes.sort(function(a,b){//Regresa la lista ordenada mediante el método sort apartir asignado a la variable mayorHse
-      return a.ptsHse > b.ptsHse;//Ordena los elementos de la lista de mayor a menor mediante la comparación de cada elemento en el parametro ptsHse
+      return a.ptsHse < b.ptsHse;//Ordena los elementos de la lista de mayor a menor mediante la comparación de cada elemento en el parametro ptsHse
     });
 
     return mayorHse;//Regresa el resultado
