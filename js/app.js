@@ -1,13 +1,9 @@
 var estudiantes = [];
 
-function obtenerListaEstudiantes(estudiantes) {
-    // TO DO: Retornar la lista de estudiantes
-    // console.log(estudiantes);
-    // var lista=[];// Se declara un arreglo vacio que almacenará los datos de los estudiantes
-    // for(var i= 0; i<tam; i++){ //Ciclo que recorre cada elemento del arreglo
-    //   lista.push(estudiantes[i]);//Agrega cada elemento del arreglo estudiantes a lista
-    // }
-    return lista = estudiantes;// regresa la lista
+function obtenerListaEstudiantes() {
+    // TO CHECK: Retornar la lista de estudiantes
+
+    return estudiantes;// regresa el arreglo que contiene los estudiantes
 }
 
 function agregarEstudiante() {
@@ -44,14 +40,15 @@ function mostrar(estudiante) {// Función que recibe el objeto estudiante
 }
 
 function mostrarLista(estudiantes) {//Recibe el resultado que arroja la función obtenerListaEstudiantes como parametro (estudiantes = lista) .
-    // TO DO: Iterar la lista del estudiantes para devolverlos en el formato que usa la función mostrar(estudiante)
+    // TO CHECK: Iterar la lista del estudiantes para devolverlos en el formato que usa la función mostrar(estudiante)
     // Retornar el template de todos los estudiantes
-    console.log("Revisa mi código por favor");//Al parecer mi lista de estudiates esta vacia :( pero suponiendo que no fuera así...
-    for(var i=0; i< tam ;i++){// Ciclo que recorre la lista desde el indice 0 hasta i<estudiantes.length(tamaño de la lista)
-      var listaEstudiantes = mostrar(estudiantes[i]); // Variable listaEstudiantes manda llamar a la funcion mostrar() para cada elemento i de la lista (estudiantes), esto hace que se muestre cada "tarjeta" con los datos de cada estudiante
-      // console.log(listaEstudiantes);
+
+    var listaEstudiantes = ""; // Variable que regreserá cada uno de los (objetos) estudiantes
+    console.log(estudiantes);
+    for(var i=0; i< estudiantes.length ;i++){// Ciclo que recorre la lista desde el indice 0 hasta i<estudiantes.length(tamaño del arreglo)
+      listaEstudiantes += mostrar(estudiantes[i]); // Variable listaEstudiantes manda llamar a la funcion mostrar() para cada elemento i de estudiantes y lo concatena, esto hace que se muestre cada "tarjeta" con los datos de cada estudiante
     }
-  return listaEstudiantes; //Regresa la lista
+  return listaEstudiantes; //Regresa la lista de estudiantes
 }
 
 function buscar(nombre, estudiantes) {//Recibe el nombre a buscar y la lista de estudiantes(estudiantes)
@@ -63,7 +60,7 @@ function buscar(nombre, estudiantes) {//Recibe el nombre a buscar y la lista de 
     var busca = estudiantes.filter(function(elemento){ //Se usa el método filter para encontrar la coincidencia del nombre a buscar se asigna a la variable busca
       return nombreBuscar == (elemento.nombre).toLowerCase;// Condición de filtro si el nombreBuscar(minusculas) == elemento.nombre(minusculas) se agrega a variable busca
     });
-
+    console.log("Me faltó corregir esta parte")
     return busca; //Devuelve el resultado obtenido
 }
 
